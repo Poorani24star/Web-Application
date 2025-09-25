@@ -1,0 +1,111 @@
+<html>
+<head>
+<title>Error 404</title>
+<link rel="icon" href="sad.png" type="image/x-icon">
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: "Comic Sans MS", Arial, sans-serif;
+        color: white;
+        text-align: center;
+        background-image: linear-gradient(to top right,black,grey);
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    h1 {
+        font-size: 100px;
+        margin: 0;
+        animation: glow 1.5s infinite alternate;
+    }
+
+    @keyframes glow {
+        from { text-shadow: 0 0 10px red, 0 0 20px white; }
+        to { text-shadow: 0 0 20px yellow, 0 0 40px red; }
+    }
+
+    p {
+        font-size: 24px;
+        margin-top: 10px;
+    }
+
+    img {
+        margin-top: 20px;
+    }
+
+    a {
+        display: inline-block;
+        margin-top: 30px;
+        padding: 10px 20px;
+        color: white;
+        text-decoration: none;
+        background: red;
+        border-radius: 10px;
+        transition: 0.3s;
+    }
+
+    a:hover {
+        background: black;
+        color: red;
+        border: 1px solid red;
+	cursor:pointer;
+    }
+  .bubble-container{
+	position:relative;
+	display:inline-block;
+    }
+  #message{
+	display:none;
+	position:absolute;
+	bottom:220px;
+	left:50%;
+	transform:teanslateX(-50%);
+        color: white;
+	font-family: "Times New Roman";
+        font-size: 17px;
+        padding: 12px 18px;
+        border-radius: 20px;
+        width: 250px;
+        text-align: center;
+        box-shadow: 2px 4px 10px rgba(0,0,0,0.4);
+        animation: fadeIn 0.3s ease;
+}
+#message::after {
+        content: "";
+        position: absolute;
+        bottom: -15px;
+        left: 50%;
+        transform: translateX(-50%);
+        border-width: 15px 12px 0 12px;
+        border-style: solid;
+        border-color: white transparent transparent transparent;
+}
+
+@keyframe fadeIn{
+	from{opacity:0; transform:scale(0.8);}
+	to{opacity:1;transform:scale(1);}
+</style>
+</head>
+<body>
+    <h1>404</h1>
+    <p>🤖 Did I lose my braincell... or did you lose the page?</p>
+    <div class="bubble-container">
+    <img src="robo.gif" alt="robot" width="200" height="200"onmouseover="showMessage()" onmouseout="hideMessage()">
+<div id="message"> I AM GOING NUTS!!!(┬┬﹏┬┬)😶‍🌫️😶‍🌫️</p>
+</div>
+    <br>
+    <a href="https://www.google.com">Take Me Home</a>
+	<script>
+	function showMessage(){
+		document.getElementById("message").style.display="block";
+	}
+	function hideMessage(){
+		document.getElementById("message").style.display="none";
+	}
+	</script>
+</body>
+</html>
