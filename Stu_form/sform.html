@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Student Registration Form</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="stu-container">
+        <h1>Student Registration Form</h1>
+        <form id="stuform">
+            <label for="name">Name of the student</label><br />
+            <input type="text" id="name" name="name" required placeholder="Name here!!" pattern="[A-Za-z\s]+" /><br />
+
+            <label for="email">Email ID</label><br />
+            <input type="email" id="email" name="email" required placeholder="Email Please!!" /><br />
+
+            <label>Gender</label><br />
+            <input type="radio" id="male" name="gender" value="male" />
+            <label for="male">Male</label>
+            <input type="radio" id="female" name="gender" value="female" />
+            <label for="female">Female</label>
+            <input type="radio" id="others" name="gender" value="others" />
+            <label for="others">Others</label><br />
+
+            <label for="course">Master Courses</label><br />
+            <select id="course" name="course">
+                <optgroup label="Science">
+                    <option value="phy">Physics</option>
+                    <option value="che">Chemistry</option>
+                    <option value="bot">Botany</option>
+                    <option value="mat">Maths</option>
+                </optgroup>
+                <optgroup label="Arts">
+                    <option value="eng">English</option>
+                    <option value="tam">Tamil</option>
+                    <option value="history">History</option>
+                    <option value="eco">Economics</option>
+                </optgroup>
+                <optgroup label="Commerce & Management">
+                    <option value="mcom">M.com</option>
+                    <option value="mcomc">M.com (CA)</option>
+                    <option value="mba">MBA</option>
+                    <option value="mcomp">M.com (PA)</option>
+                </optgroup>
+            </select><br />
+
+            <label>Hobbies</label><br />
+            <input type="checkbox" id="music" name="hobbies" value="music" />
+            <label for="music">Music</label>
+            <input type="checkbox" id="read" name="hobbies" value="reading" />
+            <label for="read">Reading</label>
+            <input type="checkbox" id="sport" name="hobbies" value="sports" />
+            <label for="sport">Sports</label>
+            <input type="checkbox" id="hobby-others" name="hobbies" value="others" />
+            <label for="hobby-others">Others</label><br />
+
+            <input type="submit" value="Click here to Submit" />
+            <input type="reset" value="Reset" />
+        </form>
+    </div>
+</body>
+</html>
