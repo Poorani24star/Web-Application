@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Student Registration Form</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="stu-container">
+    <h1>Student Registration Form</h1>
+
+    <form id="stuform">
+      <label for="name">Name:</label><br><br>
+      <input type="text" id="name" name="name" required><br><br>
+
+      <label for="email">Email:</label><br><br>
+      <input type="email" id="email" name="email" required><br><br>
+
+      <label>Gender:</label><br><br>
+      <input type="radio" name="gender" value="Male">Male
+      <input type="radio" name="gender" value="Female">Female
+      <input type="radio" name="gender" value="Others">Others<br><br>
+
+      <label for="course">Course:</label><br><br>
+      <select id="course">
+        <option value="Physics">Physics</option>
+        <option value="Maths">Maths</option>
+        <option value="English">English</option>
+      </select><br><br>
+
+      <label>Hobbies:</label><br><br>
+      <input type="checkbox" name="hobbies" value="Music">Music
+      <input type="checkbox" name="hobbies" value="Reading">Reading
+      <input type="checkbox" name="hobbies" value="Sports">Sports<br><br>
+
+      <button type="submit">Submit</button>
+      <button type="reset">Reset</button>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById("stuform").addEventListener("submit", function(event) {
+      event.preventDefault(); // stop auto refresh
+
+      const name = document.getElementById("name").value;
+      const email = document.getElementById("email").value;
+
+      const genderElements = document.getElementsByName("gender");
+      let gender = "Not selected";
+      for (let g of genderElements) {
+        if (g.checked) gender = g.value;
+      }
+
+      const course = document.getElementById("course").value;
+
+      const hobbies = document.getElementsByName("hobbies");
+      let selectedHobbies = [];
+      for (let h of hobbies) {
+        if (h.checked) selectedHobbies.push(h.value);
+      }
+
+      // Save in localStorage
+      localStorage.setItem("Name", name);
+      localStorage.setItem("Email", email);
+      localStorage.setItem("Gender", gender);
+      localStorage.setItem("Course", course);
+      localStorage.setItem("Hobbies", JSON.stringify(selectedHobbies));
+
+      // Redirect
+      window.location.href = "summary.html";
+    });
+  </script>
+</body>
+</html>

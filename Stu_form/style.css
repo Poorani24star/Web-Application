@@ -1,88 +1,82 @@
-/* style.css */
-
+/* Basic reset and font */
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f7f8;
-  margin: 0;
-  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #a8edea, #fed6e3);
   display: flex;
   justify-content: center;
   align-items: center;
-  height: auto;
-  width: auto;
+  min-height: 100vh;
+  margin: 0;
 }
 
-.stu-container {
-  background-color: white;
+/* Container box */
+.stu-container, .summary-box {
+  background: #ffffffcc;
   padding: 30px 40px;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  width: 350px;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  width: 400px;
 }
 
+/* Title */
 h1 {
   text-align: center;
   color: #333;
   margin-bottom: 25px;
-  font-weight: 600;
 }
 
+/* Labels and inputs */
 label {
-  display: block;
-  margin-bottom: 6px;
-  color: #555;
   font-weight: 500;
+  color: #333;
 }
 
 input[type="text"],
 input[type="email"],
 select {
   width: 100%;
-  padding: 8px 10px;
-  margin-bottom: 18px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  padding: 10px;
+  margin: 8px 0 16px;
+  border: 1px solid #aaa;
+  border-radius: 8px;
   font-size: 15px;
-  box-sizing: border-box;
 }
 
 input[type="radio"],
 input[type="checkbox"] {
   margin-right: 6px;
-  cursor: pointer;
 }
 
+/* Buttons */
 input[type="submit"],
-input[type="reset"] {
+input[type="reset"],
+button {
   width: 48%;
   padding: 10px;
-  border: none;
-  border-radius: 4px;
-  color: white;
   font-size: 15px;
+  font-weight: bold;
+  color: white;
+  background: #0077b6;
+  border: none;
+  border-radius: 8px;
   cursor: pointer;
-  margin-top: 12px;
+  transition: 0.3s;
 }
 
-input[type="submit"] {
-  background-color: #28a745;
-  margin-right: 4%;
-  transition: background-color 0.3s ease;
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+button:hover {
+  background: #023e8a;
 }
 
-input[type="submit"]:hover {
-  background-color: #218838;
+/* Summary box (for summary.html) */
+.summary-box p {
+  font-size: 16px;
+  margin: 12px 0;
+  color: #333;
 }
 
-input[type="reset"] {
-  background-color: #dc3545;
-  transition: background-color 0.3s ease;
-}
-
-input[type="reset"]:hover {
-  background-color: #c82333;
-}
-
-br {
-  margin-bottom: 10px;
+.summary-box span {
+  font-weight: bold;
+  color: #0077b6;
 }
