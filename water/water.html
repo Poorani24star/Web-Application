@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Health form</title>
+    </head>
+    <body>
+        <h1>WATER INTAKE CALCULATOR</h1><br>
+        <div>
+            <form>
+                <label>FULL NAME:</label><br>
+                <input type="text" name="n" id="name" placeholder="Name Here!!" required pattern="[a-z,A-Z]" title="Only letters"><br>
+                <label>AGE:</label><br>
+                <input type="number" name="age" id="age" placeholder="Age Here!!" required><br>
+                <label>WEIGHT:</label><br>
+                <input type="number" name="weight" id="weight" placeholder="Weight Here!!" required><br>
+                <label>GENDER:</label><br>
+                <input type="radio" name="gender" id="male">Male<br>
+                <input type="radio" name="gender" id="female">Female<br>
+                <input type="radio" name="gender" id="Other">Others<br>
+                <label>Activity Level:</label><br>
+                <select id="AL">
+                    <optgroup>
+                        <option id="SL">Sedentary</option>
+                        <option id="LA">Lightly Active</option>
+                        <option id="A">Active</option>
+                        <option id="VA">Gain Weight</option>
+                    </optgroup>
+                </select>
+                <label>GOAL:</label><br>
+                 <input type="radio" name="goal" id="MW">Maintain Weight<br>
+                 <input type="radio" name="goal" id="LW">Lose Weight<br>
+                 <input type="radio" name="goal" id="GW">Gain Weight<br>
+                 <button type="submit"></button>
+            </form>
+        </div>
+    </body>
+</html>
