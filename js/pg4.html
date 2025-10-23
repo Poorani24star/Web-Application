@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <script>
+      function prefixBinaryNumbers(text) 
+      {
+        return text.replace(/\b[01]+\b/g, match => `\\b${match}`);
+      }
+      const input = "The value 10110 and 1100 are binary and also 110";
+     document.write(prefixBinaryNumbers(input));
+    </script>
+  </body>
+</html>

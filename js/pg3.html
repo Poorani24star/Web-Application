@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <script>
+      function extractDates(text) 
+      {
+            const regex = /\b\d{2}-[A-Z]{3}-\d{4}\b/g;
+            return text.match(regex) || [];
+      }
+
+    const sampleText = "Events are on 11-NOV-2025, 05-JAN-2023 and 99-XYZ-9999.";
+    document.write(extractDates(sampleText)); 
+    </script>
+  </body>
+</html>

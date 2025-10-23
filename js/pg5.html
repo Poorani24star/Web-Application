@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <script>
+      function validateVoterID(id, country) 
+      {
+        let regex;
+        switch(country.toLowerCase()) 
+        {
+          case 'india':
+            regex = /^[A-Za-z]{4}\d{6}$/;
+            break;
+          case 'usa':
+            regex = /^\d{3}-\d{2}-\d{4}$/;
+            break;
+          case 'uk':
+            regex = /^\d{8}$/;
+            break;
+          default:
+            return false;
+    }
+    return regex.test(id);
+}
+document.write(validateVoterID("ABCZ123456", "india","<br>")); 
+document.write(validateVoterID("123-45-6789", "usa","<br>")); 
+document.write(validateVoterID("12345678", "uk","<br>")); 
+document.write(validateVoterID("AB12345678", "india","<br>")); 
+document.write(validateVoterID("123456789", "usa","<br>")); 
+document.write(validateVoterID("ABCDEFGH", "uk","<br>")); 
+    </script>
+  </body>
+</html>

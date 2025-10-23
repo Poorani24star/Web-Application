@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <script>
+      function matchWordsWithVowels(text) 
+      {
+        const regex = /\b\w*[aeiouAEIOU]\w*\b/g;
+        return text.match(regex) || [];
+      }
+      const text = "Try to find all words with vowels in this sentence.";
+      document.write(matchWordsWithVowels(text)); 
+    </script>
+  </body>
+</html>

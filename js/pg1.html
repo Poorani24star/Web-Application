@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <script>
+      function validateRollNumber(rollNumber) {
+        const regex = /^25MX(\d{3})$/;
+        const match = rollNumber.match(regex);
+
+        if (match) {
+          const num = parseInt(match[1], 10);
+          if (num >= 301 && num <= 360) {
+            return true;
+          }
+        }
+        return false;
+      }
+
+      document.write(validateRollNumber("25MX301") + "<br>");
+      document.write(validateRollNumber("25MX360") + "<br>"); 
+      document.write(validateRollNumber("25MX300") + "<br>"); 
+      document.write(validateRollNumber("25MX361") + "<br>"); 
+      document.write(validateRollNumber("26MX305") + "<br>"); 
+    </script>
+  </body>
+</html>
