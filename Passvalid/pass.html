@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Validation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-image: linear-gradient(to top left, lightpink, lightblue, lightyellow);
+        }
+        input[type="text"] {
+            padding: 8px;
+            width: 250px;
+        }
+        input[type="submit"] {
+            background-color: #008CBA;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #005f8a;
+        }
+        .error-message {
+            color: red;
+            font-size: 13px;
+            display: none;
+        }
+        .success-message {
+            color: green;
+            font-size: 13px;
+            display: none;
+        }
+        input.error {
+            border: 2px solid red;
+        }
+        input.success {
+            border: 2px solid green;
+        }
+    </style>
+</head>
+<body>
+    <h1>Password Validation</h1>
+    <label for="pass">Enter your password:</label><br><br>
+    <input type="text" id="pass" name="pass"><br>
+    <span id="pass-error" class="error-message">Password must contain<br> 
+    Atleast 8 characters<br>
+    One uppercase<br>
+    One lowercase<br>
+    One number<br>
+    One special character (@#$%&*).</span>
+    <span id="pass-success" class="success-message">Password is strong and valid!</span><br><br>
+    <input type="submit" value="Validate" onclick="validatePassword()">
+
+    <script>
+        function validatePassword() {
+            const pass = document.getElementById('pass');
+            const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[@#$%&*])[^\s]{8,}$/;
+            document.getElementById("pass-error").style.display = "none";
+            document.getElementById("pass-success").style.display = "none";
+
+            if (!regex.test(pass.value)) {
+                showError(pass, "pass-error");
+                return false;
+            }
+            showSuccess(pass, "pass-success");
+            return true;
+        }
+        function showError(input, errorID) {
+            input.classList.add("error");
+            input.classList.remove("success");
+            document.getElementById(errorID).style.display = "inline";
+        }
+        function showSuccess(input, successID) {
+            input.classList.add("success");
+            input.classList.remove("error");
+            document.getElementById(successID).style.display = "inline";
+        }
+        document.getElementById("pass").onblur = validatePassword;
+    </script>
+</body>
+</html>

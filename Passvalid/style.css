@@ -1,0 +1,30 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background: linear-gradient(to top left, lightpink, lightblue, lightyellow);
+}
+input
+[type="submit"]:hover
+{
+    background-color: #005f8a;
+}
+.error-message
+{
+    color:red;
+    font-size: 13px;
+    display:none;
+}
+.success-message
+{
+    color:green;
+    font-size:13px;
+    display:none;
+}
+input.error
+{
+    border-color: red;
+}
