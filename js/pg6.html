@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <script>
+      function validatePassword(pass) {
+        const regex = /^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[@#$&*])[^\s]{8,}$/;
+        const match = pass.match(regex);
+
+        if (match) {
+            return "Password Valid";
+          }
+          else{
+            return "Password Invalid";
+          }
+        }
+      document.write(validatePassword("123") + "<br>");
+      document.write(validatePassword("Ppap@") + "<br>"); 
+      document.write(validatePassword("qQ123@q4") + "<br>"); 
+      document.write(validatePassword("@#$") + "<br>"); 
+      document.write(validatePassword("asd@12335A") + "<br>"); 
+    </script>
+  </body>
+</html>
